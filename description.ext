@@ -1,0 +1,358 @@
+#include "Tier1\VehicleHud\dialog.hpp"
+#include "radio\radioChannels.hpp"
+
+onLoadName = "Combat Patrol Gen.";
+onLoadMission = "A completely random mission every time!";
+Author = "BlackAlpha, WhiteRaven, Lervik";
+
+respawn = "BASE";
+respawndelay = 1;
+RespawnDialog = 0;
+disabledAI = 1;
+saving = 0;
+enableItemsDropping = 0;
+enableDebugConsole = 1;
+
+loadScreen = "Tier1\tier1_logo.paa";
+
+
+//	BTC Revive stuff.
+#include "=BTC=_revive\=BTC=_respawn.h"
+
+
+
+//	TAW view distance stuff.
+#include "taw_vd\dialog.hpp"
+
+
+
+class Header    
+{
+	gameType = COOP; //game type
+	minPlayers = 1; //min # of players the mission supports
+	maxPlayers = 60; //max # of players the mission supports
+	playerCountMultipleOf = 1; //OFP:Elite option.
+};
+
+
+
+class RscTitles 
+{
+	#include "Tier1\VehicleHud\hud_titles.sqf"
+};
+
+
+
+class Params
+ {
+ 
+	class paramZero
+	{
+		title = "How many patrol areas would you like to create?";
+		values[] = {1, 2, 3};
+		texts[] = {"1 patrol area", "2 patrol areas (Default, PM)", "3 patrol areas"};
+		default = 2;
+	};
+		
+	class paramOne
+	{
+		title = "How many enemies would you like to spawn around each patrol area?";
+		values[] = {0, 25, 35, 50, 75, 100, 125, 150, 175, 200, 225};
+		texts[] = {"0-25", "25-50", "35-60", "50-75 (Default, PM)", "75-100", "100-125", "125-150", "150-175", "175-200", "200-225", "225-250"};
+		default = 50;
+	};
+		
+	class paramTwo
+	{
+		title = "Would you like to see the enemy positions marked on the map?";
+		values[] = {100, 75, 50, 40, 30, 25, 20, 10, 0};
+		texts[] = {"100% of them", "75% of them", "50% of them (Default)", "40% of them", "30% of them", "25% of them", "20% of them", "10% of them", "None (PM)"};
+		default = 50;
+	};
+		
+	class paramThree
+	{
+		title = "Would you like the players to be able to spawn armed helicopters?";
+		values[] = {1, 0};
+		texts[] = {"Yes (PM)", "No (Default)"};
+		default = 0;
+		code = "T1_spawnArmedHelos = %1";
+	};
+		
+	class paramFour
+	{
+		title = "Would you like the players to be able to spawn armed cars and boats?";
+		values[] = {1, 0};
+		texts[] = {"Yes (PM)", "No (Default)"};
+		default = 0;
+		code = "T1_spawnArmedcars = %1";
+	};
+		
+	class paramFive
+	{
+		title = "At what time of day would you like to play?";
+		values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23};
+		texts[] = {"00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00 (Default)", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"};
+		default = 14;
+		code = "T1_startingTimeHour = %1";
+	};
+	
+	class paramSix
+	{
+		title = "Would you like to enable TPWCAS_A3 AI Suppression?";
+		values[] = {1,0};
+		texts[] = {"On (Default)", "Off"};
+		default = 1;
+		code = "tpwcas_enable = %1";	
+	};
+		
+	class paramSeven
+	{		
+		title = "Which TPWCAS_A3 AI Suppression Mode would you like to enable?";
+		values[] = {0,1};
+		texts[] = {"AI and Players (Default)","AI only"};
+		default = 0;
+		code = "tpwcas_mode = %1";
+	}; 
+	
+	class paramEight
+	{
+		title = "Show the standard blue Patrol The Area marker?";
+		values[] = {1, 0};
+		texts[] = {"Yes (Default)", "No (PM)"};
+		default = 1;
+	};	
+	
+	class paramNine
+	{
+		title = "Radius multiplication factor for the Patrol Area?";
+		values[] = {10, 15, 20, 25, 30, 40, 50};
+		texts[] = {"1 (Default, PM)", "1.5", "2", "2.5", "3", "4", "5"};
+		default = 10;
+	};	
+	
+	class paramTen
+	{
+		title = "Minimum number of side missions?";
+		values[] = {0, 1, 2, 3, 4, 5, 6, 8, 10, 20};
+		texts[] = {"0", "1", "2 (Default)", "3", "4", "5", "6 (PM)", "8", "10", "20"};
+		default = 2;
+	};	
+	
+	class paramEleven
+	{
+		title = "Maximum number of side missions?";
+		values[] = {0, 1, 2, 3, 4, 5, 6, 8, 10, 20, 40};
+		texts[] = {"0", "1", "2", "3", "4 (Default)", "5", "6", "8", "10 (PM)", "20", "40"};
+		default = 4;
+	};		
+	
+	class paramTwelve
+	{
+		title = "Minimum radius adder for Side Mission?";
+		values[] = {0, 100, 500, 1000, 2000, 5000};
+		texts[] = {"0 (Default, PM)", "100", "500", "1000", "2000", "5000"};
+		default = 0;
+	};	
+	
+	class paramThirteen
+	{
+		title = "Radius multiplication factor for the Side Missions?";
+		values[] = {10, 15, 20, 25, 30, 40, 50};
+		texts[] = {"1 (Default, PM)", "1.5", "2", "2.5", "3", "4", "5"};
+		default = 10;
+	};	
+
+	class paramFourteen
+	{
+		title = "Probability factor for enemy vehicle appearance";
+		values[] = {15, 10, 5, 2, 0};
+		texts[] = {"High", "Normal (Default, PM)", "Half", "Low", "Zero"};
+		default = 10;
+	};	
+
+	class paramFifteen
+	{
+		title = "Enemy mortars present in the normal troop mix?";
+		values[] = {1,0};
+		texts[] = {"Yes", "No (Default, PM)"};
+		default = 0;
+	};
+
+	class paramSixteen
+	{
+		title = "Is UAV Recon available to Platoon Leader?";
+		values[] = {1,0};
+		texts[] = {"Yes", "No (Default, PM)"};
+		default = 0;
+		code = "uav_available_in_mission = %1";
+	};
+
+	class paramSeventeen
+	{
+		title = "How many enemy air deployment sites?";
+		values[] = {0, 1, 2, 3, 4, 5, 7, 10};
+		texts[] = {"0","1","2","3","4 (Default, PM)","5","7","10"};
+		default = 4;
+	};
+		
+	class paramEighteen
+	{
+		title = "Enable IEDs?";
+		values[] = {1,0};
+		texts[] = {"Yes (Default, PM)", "No"};
+		default = 1;
+	};
+		
+	class paramNineteen
+	{
+		title = "How many explosive IEDs?";
+		values[] = {2, 4, 6, 12, 25, 35, 50};
+		texts[] = {"2 (Default, PM)", "4", "6", "12", "25", "35", "50"};
+		default = 2;
+	};
+
+	class paramTwenty
+	{
+		title = "Activate civilian module?";
+		values[] = {1, 0};
+		texts[] = {"Yes (Default, PM)", "No"};
+		default = 0;
+	};
+		
+	class paramTwentyone
+	{
+		title = "Probability to obtain intel when questioning a civilian";
+		values[] = {100, 80, 60, 50, 40, 30, 20, 10};
+		texts[] = {"100%", "80%", "60%", "50% (Default, PM)", "40%", "30%", "20%", "10%"};
+		default = 50;
+	};
+		
+	class paramTwentytwo
+	{
+		title = "Enable humanitarian aid module?";
+		values[] = {1,0};
+		texts[] = {"Yes (Default, PM)", "No"};
+		default = 0;
+	};
+		
+	class paramTwentythree
+	{
+		title = "Probability to obtain humanitarian mission from civilians?";
+		values[] = {100, 50, 25, 10, 5, 4, 3, 2, 1};
+		texts[] = {"100%", "50%", "25%", "10%", "5% (Default, PM)", "4%", "3%", "2%", "1%"};
+		default = 5;
+	};
+	
+	class paramTwentyfour
+	{
+		title = "Starting status of campaign balance?";
+		values[] = {200, 180, 150, 125, 100, 75, 50, 20, 0};
+		texts[] = {"Definitely Winning", "Winning", "Moderately Winning", "Slightly Winning", "Balanced (Default, PM)", "Slightly Losing", "Moderately Losing", "Losing", "Definitely Losing"};
+		default = 100;
+	};
+		
+	class paramTwentyfive
+	{
+		title = "Starting Blufor reputation among civilians";
+		values[] = {200, 180, 150, 125, 100, 75, 50, 20, 0};
+		texts[] = {"Really Love", "Love", "Like", "Indifferent-Like", "Indifferent (Default, PM)", "Indifferent-Dislike", "Dislike", "Hate", "Really Hate"};
+		default = 100;
+	};
+		
+	class paramTwentysix
+	{
+		title = "Lowest possible Blufor reputation among civilians?";
+		values[] = {200, 180, 150, 125, 100, 75, 50, 20, 0};
+		texts[] = {"Really Love", "Love", "Like", "Indifferent-Like", "Indifferent", "Indifferent-Dislike", "Dislike", "Hate", "Really Hate (Default, PM)"};
+		default = 0;
+	};
+	
+	class paramTwentyseven
+	{
+		title = "Starting civilian happiness?";
+		values[] = {200, 180, 150, 125, 100, 75, 50, 20, 0};
+		texts[] = {"Really Happy", "Happy", "Content", "Good", "Average (Default, PM)", "Not Good", "Disaffected", "Angry", "Murderous"};
+		default = 100;
+	};
+		
+	class paramTwentyeight
+	{
+		title = "Lowest civilian happiness possible?";
+		values[] = {200, 180, 150, 125, 100, 75, 50, 20, 0};
+		texts[] = {"Really Happy", "Happy", "Content", "Good", "Average", "Not Good", "Disaffected", "Angry", "Murderous (Default, PM)"};
+		default = 0;
+	};
+		
+	class paramTwentynine
+	{
+		title = "DB - Enable persistent database module? (ALWAYS turn OFF on PUBLIC!)";
+		values[] = {1, 0};
+		texts[] = {"Yes (PM)", "No (Default)"};
+		default = 0;
+	};
+
+	class paramThirty
+	{
+		title = "DB - Reset the campaign parameters stored in database to the ones defined here?";
+		values[] = {1, 0};
+		texts[] = {"Yes", "No (Default, PM)"};
+		default = 0;
+	};	
+	
+	class paramThirtyone
+	{
+		title = "DB - Load the enemies from the last session?";
+		values[] = {1, 0};
+		texts[] = {"Yes", "No (Default)"};
+		default = 0;
+	};	
+	
+	class paramThirtytwo
+	{
+		title = "Enable Vehicle Madness?";
+		values[] = {1, 0};
+		texts[] = {"Yes", "No (Default, PM)"};
+		default = 0;
+	};	
+	
+	class paramThirtythree
+	{
+		title = "Show Side Mission markers?";
+		values[] = {1, 0};
+		texts[] = {"Yes (Public)", "No (Private)"};
+		default = 1;
+	};	
+	
+	class paramThirtyfour
+	{
+		title = "How many lives should the players get?";
+		values[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 40, 50};
+		texts[] = {"Infinite", "1 (Default, No respawn)", "2", "3", "4", "5", "6", "7", "8", "9", "10", "15", "20", "25", "30", "40", "50"};
+		default = 0;
+		code = "BTC_availableLives = %1";
+	};
+};
+
+
+class CfgSounds 
+{
+	
+	sounds[]= {confirm1,warning1};
+
+	class confirm1
+	{
+		name = "confirm1";
+		sound[] = {Sounds\confirm1.ogg, 1, 1.0};
+		titles[] = {};
+	};
+
+	class warning1
+	{
+		name = "warning1";
+		sound[] = {Sounds\warning1.ogg, 1, 1.0};
+		titles[] = {};
+	};
+
+};
+

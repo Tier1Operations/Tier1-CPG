@@ -1,0 +1,3126 @@
+version=12;
+class Mission
+{
+	addOns[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_map_stratis",
+		"A3_Structures_F_Mil_Helipads",
+		"A3_Structures_F_Walls",
+		"A3_Structures_F_Households_House_Big02",
+		"A3_Structures_F_Households_WIP",
+		"A3_Structures_F_Civ_Constructions",
+		"A3_Structures_F_Items_Vessels",
+		"A3_Structures_F_Furniture",
+		"A3_Structures_F_Households_Addons",
+		"A3_Structures_F_Civ_Garbage",
+		"A3_Structures_F_Households_House_Small03",
+		"A3_Structures_F_Households_House_Big01",
+		"A3_Structures_F_Households_House_Small01",
+		"A3_Structures_F_Households_House_Small02",
+		"A3_Structures_F_Households_House_Shop01",
+		"A3_Structures_F_Households_House_Shop02",
+		"A3_Structures_F_Civ_Lamps",
+		"A3_Structures_F_Naval_Piers",
+		"A3_Structures_F_Civ_Market",
+		"A3_Structures_F_Civ_Calvaries",
+		"A3_Structures_F_Naval_RowBoats",
+		"A3_Structures_F_Civ_PlayGround",
+		"A3_Structures_F_Households_Stone_Shed",
+		"A3_Structures_F_Ind_SolarPowerPlant",
+		"A3_Structures_F_Dominants_Lighthouse",
+		"A3_Structures_F_Mil_Radar",
+		"A3_Structures_F_Ind_DieselPowerPlant",
+		"A3_Structures_F_Ind_Transmitter_Tower",
+		"A3_Structures_F_Mil_Bunker",
+		"A3_Structures_F_Ind_Pipes",
+		"A3_Structures_F_Mil_Offices",
+		"A3_Structures_F_Ind_FuelStation",
+		"A3_Structures_F_Bridges",
+		"A3_Soft_F_Offroad_01",
+		"A3_Structures_F_Ind_Cargo",
+		"A3_Boat_F_Boat_Armed_01",
+		"A3_Misc_F_Helpers",
+		"A3_Structures_F_Civ_InfoBoards",
+		"A3_Boat_F_Boat_Transport_01",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Signs_F",
+		"A3_Structures_F_Training",
+		"a3_characters_f_beta",
+		"A3_Characters_F_Civil",
+		"a3_map_altis",
+		"a3_characters_f_gamma",
+		"A3_Soft_F_Crusher_UGV",
+		"A3_Air_F_Beta_Heli_Attack_01"
+	};
+	addOnsAuto[]=
+	{
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f_beta",
+		"a3_characters_f_gamma",
+		"A3_Structures_F_Mil_Helipads",
+		"A3_Boat_F_Boat_Armed_01",
+		"A3_Structures_F_Civ_InfoBoards",
+		"A3_Structures_F_Walls",
+		"A3_Structures_F_Mil_Flags",
+		"A3_Misc_F_Helpers",
+		"A3_Structures_F_Civ_Constructions",
+		"A3_Signs_F",
+		"A3_Boat_F_Boat_Transport_01",
+		"A3_Soft_F_Crusher_UGV",
+		"a3_map_altis"
+	};
+	randomSeed=8544039;
+	class Intel
+	{
+		briefingName="Tier1 Combat Patrol Generator v104";
+		resistanceWest=0;
+		startWeather=0.099999994;
+		startWind=0;
+		startWaves=0.39999998;
+		forecastWeather=0.099999994;
+		forecastWind=0;
+		forecastWaves=0;
+		wavesForced=1;
+		year=2035;
+		month=8;
+		day=7;
+		hour=14;
+		minute=0;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+	class Groups
+	{
+		items=39;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15184.384,17.904207,17311.229};
+					azimut=170.01401;
+					special="NONE";
+					id=0;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					text="PlatoonL";
+					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""]; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; _nul = [this] execVM ""Tier1\UAV\UAV_init.sqf""; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_PL = group _unit; Grp_PL setGroupId ['Platoon Lead']; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];this addweapon ""Laserdesignator"";this addmagazine ""laserbatteries"";";
+					description="Platoon Leader [Tier1 ONLY]";
+				};
+				class Item1
+				{
+					position[]={15181.236,17.900909,17310.555};
+					azimut=170.01361;
+					special="NONE";
+					id=1;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="PlatoonMedic";
+					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_PL = group _unit; Grp_PL setGroupId ['Platoon Lead']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6]; _unit addItem 'ItemGPS'; _unit assignItem 'ItemGPS';""];";
+					description="Platoon Medic";
+				};
+				class Item2
+				{
+					position[]={15187.505,17.907188,17312.113};
+					azimut=170.01361;
+					special="NONE";
+					id=2;
+					side="WEST";
+					vehicle="B_soldier_repair_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="PlatoonRepair";
+					init="Grp_PL = group this; Grp_PL setGroupId [""Platoon Lead""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_PL = group _unit; Grp_PL setGroupId ['Platoon Lead']; (unitbackpack this) addmagazinecargo ['SmokeShell',6];""];";
+					description="Platoon Repair Spec.";
+				};
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15184.807,17.919216,17300.395};
+					azimut=226.66701;
+					special="NONE";
+					id=3;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="AlphaSL";
+					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Lead""]; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_ASL = group _unit; Grp_ASL setGroupId ['Alpha Lead']; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Alpha Squad Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15186.155,17.922516,17299.268};
+					azimut=226.66701;
+					special="NONE";
+					id=4;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="AlphaMedic";
+					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Lead""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_ASL = group _unit; Grp_ASL setGroupId ['Alpha Lead']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6]; _unit addItem 'ItemGPS'; _unit assignItem 'ItemGPS';""];";
+					description="Alpha Squad Medic";
+				};
+				class Item2
+				{
+					position[]={15183.423,17.915581,17301.738};
+					azimut=226.66701;
+					special="NONE";
+					id=5;
+					side="WEST";
+					vehicle="B_soldier_exp_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="AlphaDemo";
+					init="Grp_ASL = group this; Grp_ASL setGroupId [""Alpha Lead""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_ASL = group _unit; Grp_ASL setGroupId ['Alpha Lead'];""];";
+					description="Alpha EOD";
+				};
+			};
+		};
+		class Item2
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={15182.561,17.919197,17298.164};
+					azimut=48.637856;
+					special="NONE";
+					id=6;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Alpha11";
+					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_A1 = group _unit; Grp_A1 setGroupId ['Alpha 1']; _unit addItem 'ItemGPS';  _unit assignItem 'ItemGPS'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Alpha 1 Fireteam Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15180.911,17.91955,17296.248};
+					azimut=48.637856;
+					special="NONE";
+					id=7;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Alpha12";
+					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_A1 = group _unit; Grp_A1 setGroupId ['Alpha 1'];""];";
+					description="Alpha 1 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={15179.351,17.919136,17294.596};
+					azimut=48.637856;
+					special="NONE";
+					id=8;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Alpha13";
+					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_A1 = group _unit; Grp_A1 setGroupId ['Alpha 1']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Alpha 1 Ass. Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={15177.967,17.91729,17293.166};
+					azimut=48.637856;
+					special="NONE";
+					id=9;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Alpha14";
+					init="Grp_A1 = group this; Grp_A1 setGroupId [""Alpha 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_A1 = group _unit; Grp_A1 setGroupId ['Alpha 1'];""];";
+					description="Alpha 1 Rifleman (AT)";
+				};
+			};
+		};
+		class Item3
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={15183.93,17.923098,17296.607};
+					azimut=48.637856;
+					special="NONE";
+					id=10;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Alpha21";
+					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_A2 = group _unit; Grp_A2 setGroupId ['Alpha 2']; _unit addItem 'ItemGPS';  _unit assignItem 'ItemGPS'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Alpha 2 Fireteam Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15182.174,17.922899,17294.834};
+					azimut=48.637856;
+					special="NONE";
+					id=11;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Alpha22";
+					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""]; this addEventHandler [""respawn"", ""_unit = _this select 0;  Grp_A2 = group _unit; Grp_A2 setGroupId ['Alpha 2'];""];";
+					description="Alpha 2 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={15180.726,17.920969,17293.346};
+					azimut=48.637856;
+					special="NONE";
+					id=12;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Alpha23";
+					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0;  Grp_A2 = group _unit; Grp_A2 setGroupId ['Alpha 2']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Alpha 2 Ass. Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={15179.293,17.91906,17291.939};
+					azimut=48.637901;
+					special="NONE";
+					id=13;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Alpha24";
+					init="Grp_A2 = group this; Grp_A2 setGroupId [""Alpha 2""]; this addEventHandler [""respawn"", ""_unit = _this select 0;  Grp_A2 = group _unit; Grp_A2 setGroupId ['Alpha 2'];""];";
+					description="Alpha 2 Rifleman (AT)";
+				};
+			};
+		};
+		class Item4
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={15181.344,17.915705,17299.566};
+					azimut=48.637901;
+					special="NONE";
+					id=14;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Alpha31";
+					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_A3 = group _unit; Grp_A3 setGroupId ['Alpha 3']; _unit addItem 'ItemGPS';  _unit assignItem 'ItemGPS'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Alpha 3 Fireteam Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15179.574,17.915956,17297.607};
+					azimut=48.637856;
+					special="NONE";
+					id=15;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Alpha32";
+					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_A3 = group _unit; Grp_A3 setGroupId ['Alpha 3'];""];";
+					description="Alpha 3 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={15177.995,17.915899,17296.07};
+					azimut=48.637856;
+					special="NONE";
+					id=16;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Alpha33";
+					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_A3 = group _unit; Grp_A3 setGroupId ['Alpha 3']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Alpha 3 Ass. Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={15176.385,17.91518,17294.484};
+					azimut=48.637856;
+					special="NONE";
+					id=17;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Alpha34";
+					init="Grp_A3 = group this; Grp_A3 setGroupId [""Alpha 3""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_A3 = group _unit; Grp_A3 setGroupId ['Alpha 3'];""];";
+					description="Alpha 3 Rifleman (AT)";
+				};
+			};
+		};
+		class Item5
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15179.383,17.902666,17306.768};
+					azimut=231.58952;
+					special="NONE";
+					id=18;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="BravoSL";
+					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Lead""]; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_BSL = group _unit; Grp_BSL setGroupId ['Bravo Lead']; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Bravo Squad Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15180.799,17.907248,17305.363};
+					azimut=231.58952;
+					special="NONE";
+					id=19;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="BravoMedic";
+					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Lead""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_BSL = group _unit; Grp_BSL setGroupId ['Bravo Lead']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6]; _unit addItem 'ItemGPS'; _unit assignItem 'ItemGPS';""];";
+					description="Bravo Squad Medic";
+				};
+				class Item2
+				{
+					position[]={15178.112,17.89753,17308.078};
+					azimut=231.59;
+					special="NONE";
+					id=20;
+					side="WEST";
+					vehicle="B_soldier_exp_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="BravoDemo";
+					init="Grp_BSL = group this; Grp_BSL setGroupId [""Bravo Lead""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_BSL = group _unit; Grp_BSL setGroupId ['Bravo Lead'];""];";
+					description="Bravo EOD";
+				};
+			};
+		};
+		class Item6
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={15176.749,17.901775,17303.959};
+					azimut=50.437057;
+					special="NONE";
+					id=21;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Bravo11";
+					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_B1 = group _unit; Grp_B1 setGroupId ['Bravo 1']; _unit addItem 'ItemGPS';  _unit assignItem 'ItemGPS'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Bravo 1 Fireteam Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15175.259,17.903664,17302.504};
+					azimut=50.437057;
+					special="NONE";
+					id=22;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Bravo12";
+					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_B1 = group _unit; Grp_B1 setGroupId ['Bravo 1'];""];";
+					description="Bravo 1 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={15173.517,17.903318,17301.027};
+					azimut=50.437057;
+					special="NONE";
+					id=23;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Bravo13";
+					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_B1 = group _unit; Grp_B1 setGroupId ['Bravo 1']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Bravo 1 Ass. Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={15171.974,17.903824,17299.631};
+					azimut=50.437057;
+					special="NONE";
+					id=24;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Bravo14";
+					init="Grp_B1 = group this; Grp_B1 setGroupId [""Bravo 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_B1 = group _unit; Grp_B1 setGroupId ['Bravo 1'];""];";
+					description="Bravo 1 Rifleman (AT)";
+				};
+			};
+		};
+		class Item7
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={15177.847,17.905958,17302.939};
+					azimut=50.437057;
+					special="NONE";
+					id=25;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Bravo21";
+					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; _unit addItem 'ItemGPS';  _unit assignItem 'ItemGPS'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Bravo 2 Fireteam Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15176.107,17.906378,17301.324};
+					azimut=50.437057;
+					special="NONE";
+					id=26;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Bravo22";
+					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					description="Bravo 2 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={15174.529,17.906164,17299.906};
+					azimut=50.437057;
+					special="NONE";
+					id=27;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Bravo23";
+					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Bravo 2 Ass. Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={15173.141,17.906176,17298.51};
+					azimut=50.437057;
+					special="NONE";
+					id=28;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Bravo24";
+					init="Grp_B2 = group this; Grp_B2 setGroupId [""Bravo 2""];";
+					description="Bravo 2 Rifleman (AT)";
+				};
+			};
+		};
+		class Item8
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={15175.604,17.897327,17305.053};
+					azimut=50.437057;
+					special="NONE";
+					id=29;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Bravo31";
+					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_B3 = group _unit; Grp_B3 setGroupId ['Bravo 3']; _unit addItem 'ItemGPS';  _unit assignItem 'ItemGPS'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Bravo 3 Fireteam Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15174.158,17.899141,17303.65};
+					azimut=50.437057;
+					special="NONE";
+					id=30;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Bravo32";
+					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_B3 = group _unit; Grp_B3 setGroupId ['Bravo 3'];""];";
+					description="Bravo 3 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={15172.442,17.900478,17302.141};
+					azimut=50.437057;
+					special="NONE";
+					id=31;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Bravo33";
+					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_B3 = group _unit; Grp_B3 setGroupId ['Bravo 3']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Bravo 3 Ass. Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={15171.013,17.902466,17300.65};
+					azimut=40.437115;
+					special="NONE";
+					id=32;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Bravo34";
+					init="Grp_B3 = group this; Grp_B3 setGroupId [""Bravo 3""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_B3 = group _unit; Grp_B3 setGroupId ['Bravo 3'];""];";
+					description="Bravo 3 Rifleman (AT)";
+				};
+			};
+		};
+		class Item9
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=6;
+				class Item0
+				{
+					position[]={15163.876,17.873096,17337.068};
+					azimut=42.8727;
+					special="NONE";
+					id=33;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Shadow11";
+					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""]; this addItem ""ItemGPS""; this addItem ""B_UavTerminal"";  this additem ""Muzzle_snds_H""; this addBackpack ""B_UAV_01_backpack_F""; this addWeapon ""RangeFinder""; this assignItem ""ItemGPS""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Shadow1 = group _unit; Grp_Shadow1 setGroupId ['Shadow 1']; _unit addItem 'ItemGPS'; _unit additem 'Muzzle_snds_H'; _unit assignItem 'ItemGPS'; _unit addItem 'B_UavTerminal'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_UAV_01_backpack_F'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];this addweapon ""Laserdesignator"";this addmagazine ""laserbatteries"";";
+					description="Shadow 1 Leader [Tier1 ONLY]";
+				};
+				class Item1
+				{
+					position[]={15162.52,17.867607,17335.664};
+					azimut=42.8722;
+					special="NONE";
+					id=34;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Shadow12";
+					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Shadow1 = group _unit; Grp_Shadow1 setGroupId ['Shadow 1'];""];this addweapon ""Laserdesignator"";this addmagazine ""laserbatteries"";";
+					description="Shadow 1 Heavy gunner [Tier1 ONLY]";
+				};
+				class Item2
+				{
+					position[]={15161.089,17.867548,17334.34};
+					azimut=42.8727;
+					special="NONE";
+					id=35;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Shadow13";
+					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];  this additem ""Muzzle_snds_H""; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Shadow1 = group _unit; Grp_Shadow1 setGroupId ['Shadow 1'];  _unit additem 'Muzzle_snds_H';""];this addweapon ""Laserdesignator"";this addmagazine ""laserbatteries"";";
+					description="Shadow 1 Radioman (AT) [Tier1 ONLY]";
+				};
+				class Item3
+				{
+					position[]={15159.638,17.869406,17332.945};
+					azimut=42.8727;
+					special="NONE";
+					id=36;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Shadow14";
+					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];  this additem ""Muzzle_snds_H""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Shadow1 = group _unit; Grp_Shadow1 setGroupId ['Shadow 1']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6]; _unit additem 'Muzzle_snds_H';""];this addweapon ""Laserdesignator"";this addmagazine ""laserbatteries"";";
+					description="Shadow 1 Ass. Heavy Gunner [Tier1 ONLY]";
+				};
+				class Item4
+				{
+					position[]={15158.216,17.870001,17331.518};
+					azimut=42.8727;
+					special="NONE";
+					id=37;
+					side="WEST";
+					vehicle="B_soldier_exp_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Shadow15";
+					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];  this additem ""Muzzle_snds_H""; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Shadow1 = group _unit; Grp_Shadow1 setGroupId ['Shadow 1']; _unit additem 'Muzzle_snds_H';""];this addweapon ""Laserdesignator"";this addmagazine ""laserbatteries"";";
+					description="Shadow 1 Saboteur [Tier1 ONLY]";
+				};
+				class Item5
+				{
+					position[]={15156.618,17.867653,17330.09};
+					azimut=42.8727;
+					special="NONE";
+					id=38;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Shadow16";
+					init="Grp_Shadow1 = group this; Grp_Shadow1 setGroupId [""Shadow 1""];  this additem ""Muzzle_snds_H""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Shadow1 = group _unit; Grp_Shadow1 setGroupId ['Shadow 1']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6]; _unit addItem 'ItemGPS'; _unit assignItem 'ItemGPS'; _unit additem 'Muzzle_snds_H';""];this addweapon ""Laserdesignator"";this addmagazine ""laserbatteries"";";
+					description="Shadow 1 Medic [Tier1 ONLY]";
+				};
+			};
+		};
+		class Item10
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15102.862,17.91,17045.471};
+					azimut=265.96701;
+					special="NONE";
+					id=39;
+					side="WEST";
+					vehicle="B_Helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					text="Reaper11";
+					init="Grp_Reaper1 = group this; Grp_Reaper1 setGroupId [""Reaper 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Reaper1 = group _unit; Grp_Reaper1 setGroupId ['Reaper 1'];""];";
+					description="Reaper 1-1 Pilot (Must be on TeamSpeak: ts.tier1ops.eu - pw: welcome)";
+				};
+				class Item1
+				{
+					position[]={15103.105,17.91,17041.717};
+					azimut=265.96701;
+					special="NONE";
+					id=40;
+					side="WEST";
+					vehicle="B_Helipilot_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Reaper12";
+					init="Grp_Reaper1 = group this; Grp_Reaper1 setGroupId [""Reaper 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Reaper1 = group _unit; Grp_Reaper1 setGroupId ['Reaper 1'];""];";
+					description="Reaper 1-2 Pilot (Must be on TeamSpeak)";
+				};
+				class Item2
+				{
+					position[]={15106.832,17.91,17044.195};
+					azimut=265.96701;
+					special="NONE";
+					id=41;
+					side="WEST";
+					vehicle="B_Helipilot_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Reaper13";
+					init="Grp_Reaper1 = group this; Grp_Reaper1 setGroupId [""Reaper 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Reaper1 = group _unit; Grp_Reaper1 setGroupId ['Reaper 1'];""];";
+					description="Reaper 1-3 Pilot (Must be on TeamSpeak)";
+				};
+			};
+		};
+		class Item11
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={18583.07,42.582672,16795.979};
+					azimut=28.899029;
+					special="NONE";
+					id=42;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="agia_town_logic";
+				};
+			};
+		};
+		class Item12
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21785.143,14.111733,7607.2178};
+					azimut=360.46069;
+					special="NONE";
+					id=43;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="kratos_town_logic";
+				};
+			};
+		};
+		class Item13
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={18839.459,189.80232,10109.211};
+					azimut=360.46069;
+					special="NONE";
+					id=44;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="nikos_town_logic";
+				};
+			};
+		};
+		class Item14
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20232.551,36.849213,11787.834};
+					azimut=360.46069;
+					special="NONE";
+					id=45;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="girna_1_town_logic";
+				};
+			};
+		};
+		class Item15
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20244.771,67.383018,11518.337};
+					azimut=360.46069;
+					special="NONE";
+					id=46;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="girna_2_town_logic";
+				};
+			};
+		};
+		class Item16
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20481.387,34.45121,8845.3066};
+					azimut=360.46069;
+					special="NONE";
+					id=47;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="girna_3_town_logic";
+				};
+			};
+		};
+		class Item17
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21370.568,17.994598,10993.461};
+					azimut=360.46069;
+					special="NONE";
+					id=48;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="ioannis_town_logic";
+				};
+			};
+		};
+		class Item18
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22680.963,13.986419,6929.979};
+					azimut=360.46069;
+					special="NONE";
+					id=49;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="cephas_town_logic";
+				};
+			};
+		};
+		class Item19
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20776.648,42.004669,6679.4834};
+					azimut=360.46069;
+					special="NONE";
+					id=50;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="jay_town_logic";
+				};
+			};
+		};
+		class Item20
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20739.213,17.223974,15719.874};
+					azimut=360.46069;
+					special="NONE";
+					id=51;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="kamino_town_logic";
+				};
+			};
+		};
+		class Item21
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={17120.904,24.963943,10005.999};
+					azimut=360.46069;
+					special="NONE";
+					id=52;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="tsoukalia_town_logic";
+				};
+			};
+		};
+		class Item22
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={17418.711,14.19992,13168.327};
+					azimut=360.46069;
+					special="NONE";
+					id=53;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="mike_1_town_logic";
+				};
+			};
+		};
+		class Item23
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21703.783,13.519474,14047.795};
+					azimut=360.46069;
+					special="NONE";
+					id=54;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="keiros_town_logic";
+				};
+			};
+		};
+		class Item24
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={18803.992,30.1404,16569.277};
+					azimut=360.46069;
+					special="NONE";
+					id=55;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="base_1_town_logic";
+				};
+			};
+		};
+		class Item25
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20870.611,32.177788,13259.932};
+					azimut=360.46069;
+					special="NONE";
+					id=56;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="limeri_town_logic";
+				};
+			};
+		};
+		class Item26
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={18080.77,26.282257,15268.747};
+					azimut=360.461;
+					special="NONE";
+					id=57;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="base_2_town_logic";
+				};
+			};
+		};
+		class Item27
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20081.219,101.06625,6726.9302};
+					azimut=360.46069;
+					special="NONE";
+					id=58;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="radio_2_town_logic";
+				};
+			};
+		};
+		class Item28
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={20854.373,46.324467,16874.377};
+					azimut=360.46069;
+					special="NONE";
+					id=59;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="pardalos_town_logic";
+				};
+			};
+		};
+		class Item29
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={19133.344,43.143253,8778.6768};
+					azimut=360.46069;
+					special="NONE";
+					id=60;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="mike_2_town_logic";
+				};
+			};
+		};
+		class Item30
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21170.73,25.304811,16536.721};
+					azimut=360.46069;
+					special="NONE";
+					id=61;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="rogain_1_town_logic";
+				};
+			};
+		};
+		class Item31
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={19341.617,34.567505,13306.336};
+					azimut=339.28699;
+					special="NONE";
+					id=62;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="epodos_town_logic";
+				};
+			};
+		};
+		class Item32
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21025.932,37.652599,17013.451};
+					azimut=360.46069;
+					special="NONE";
+					id=63;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="tsekos_town_logic";
+				};
+			};
+		};
+		class Item33
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={16769.887,19.654951,12885.782};
+					azimut=312.89972;
+					special="NONE";
+					id=64;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="kalitos_town_logic";
+				};
+			};
+		};
+		class Item34
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={15093.176,17.91,17150.652};
+					azimut=297.53799;
+					special="NONE";
+					id=65;
+					side="WEST";
+					vehicle="B_Pilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					text="Raptor1";
+					init="Grp_Raptor1 = group this; Grp_Raptor1 setGroupId [""Raptor 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_Raptor1 = group _unit; Grp_Raptor1 setGroupId ['Raptor 1'];""];";
+					description="Raptor 1 Pilot (Tier1 Members Only!)";
+				};
+			};
+		};
+		class Item35
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={15191.647,17.935532,17294.527};
+					azimut=226.66701;
+					special="NONE";
+					id=66;
+					side="WEST";
+					vehicle="B_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.20274451;
+					text="CharlieSL";
+					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Lead""]; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_CSL = group _unit; Grp_CSL setGroupId ['Charlie Lead']; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Charlie Squad Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15192.996,17.93733,17293.4};
+					azimut=226.66701;
+					special="NONE";
+					id=67;
+					side="WEST";
+					vehicle="B_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="CharlieMedic";
+					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Lead""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_CSL = group _unit; Grp_CSL setGroupId ['Charlie Lead']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6]; _unit addItem 'ItemGPS'; _unit assignItem 'ItemGPS';""];";
+					description="Charlie Squad Medic";
+				};
+				class Item2
+				{
+					position[]={15190.264,17.932526,17295.871};
+					azimut=226.66701;
+					special="NONE";
+					id=68;
+					side="WEST";
+					vehicle="B_soldier_exp_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="CharlieDemo";
+					init="Grp_CSL = group this; Grp_CSL setGroupId [""Charlie Lead""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_CSL = group _unit; Grp_CSL setGroupId ['Charlie Lead'];""];";
+					description="Charlie EOD";
+				};
+			};
+		};
+		class Item36
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={15189.401,17.932537,17292.297};
+					azimut=48.637901;
+					special="NONE";
+					id=69;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Charlie11";
+					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C1 = group _unit; Grp_C1 setGroupId ['Charlie 1']; _unit addItem 'ItemGPS';  _unit assignItem 'ItemGPS'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Charlie 1 Fireteam Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15187.752,17.930338,17290.381};
+					azimut=48.637901;
+					special="NONE";
+					id=70;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Charlie12";
+					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C1 = group _unit; Grp_C1 setGroupId ['Charlie 1'];""];";
+					description="Charlie 1 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={15186.191,17.928257,17288.729};
+					azimut=48.637901;
+					special="NONE";
+					id=71;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Charlie13";
+					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C1 = group _unit; Grp_C1 setGroupId ['Charlie 1']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Charlie 1 Ass. Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={15184.808,17.926411,17287.299};
+					azimut=48.637901;
+					special="NONE";
+					id=72;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Charlie14";
+					init="Grp_C1 = group this; Grp_C1 setGroupId [""Charlie 1""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C1 = group _unit; Grp_C1 setGroupId ['Charlie 1'];""];";
+					description="Charlie 1 Rifleman (AT)";
+				};
+			};
+		};
+		class Item37
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={15190.771,17.934362,17290.74};
+					azimut=48.637901;
+					special="NONE";
+					id=73;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Charlie21";
+					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C2 = group _unit; Grp_C2 setGroupId ['Charlie 2']; _unit addItem 'ItemGPS';  _unit assignItem 'ItemGPS'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Charlie 2 Fireteam Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15189.015,17.93202,17288.967};
+					azimut=48.637901;
+					special="NONE";
+					id=74;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Charlie22";
+					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C2 = group _unit; Grp_C2 setGroupId ['Charlie 2'];""];";
+					description="Charlie 2 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={15187.566,17.93009,17287.479};
+					azimut=48.637901;
+					special="NONE";
+					id=75;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Charlie23";
+					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C2 = group _unit; Grp_C2 setGroupId ['Charlie 2']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Charlie 2 Ass. Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={15186.134,17.928181,17286.072};
+					azimut=48.637901;
+					special="NONE";
+					id=76;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Charlie24";
+					init="Grp_C2 = group this; Grp_C2 setGroupId [""Charlie 2""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C2 = group _unit; Grp_C2 setGroupId ['Charlie 2'];""];";
+					description="Charlie 2 Rifleman (AT)";
+				};
+			};
+		};
+		class Item38
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={15188.185,17.930914,17293.699};
+					azimut=48.637901;
+					special="NONE";
+					id=77;
+					side="WEST";
+					vehicle="B_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="Charlie31";
+					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""]; this addItem ""ItemGPS""; this assignItem ""ItemGPS""; this addWeapon ""RangeFinder""; this addbackpack ""B_AssaultPack_khk""; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C3 = group _unit; Grp_C3 setGroupId ['Charlie 3']; _unit addItem 'ItemGPS';  _unit assignItem 'ItemGPS'; _unit addWeapon 'RangeFinder'; _unit addbackpack 'B_AssaultPack_khk'; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Charlie 3 Fireteam Leader [Must have Microphone]";
+				};
+				class Item1
+				{
+					position[]={15186.415,17.928555,17291.74};
+					azimut=48.637901;
+					special="NONE";
+					id=78;
+					side="WEST";
+					vehicle="B_soldier_AR_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="Charlie32";
+					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C3 = group _unit; Grp_C3 setGroupId ['Charlie 3'];""];";
+					description="Charlie 3 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={15184.836,17.926449,17290.203};
+					azimut=48.637901;
+					special="NONE";
+					id=79;
+					side="WEST";
+					vehicle="B_soldier_AAR_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Charlie33";
+					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""]; (unitbackpack this) addmagazinecargo [""SmokeShell"",6]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C3 = group _unit; Grp_C3 setGroupId ['Charlie 3']; (unitbackpack _unit) addmagazinecargo ['SmokeShell',6];""];";
+					description="Charlie 3 Ass. Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={15183.226,17.924301,17288.617};
+					azimut=48.637901;
+					special="NONE";
+					id=80;
+					side="WEST";
+					vehicle="B_soldier_LAT_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="Charlie34";
+					init="Grp_C3 = group this; Grp_C3 setGroupId [""Charlie 3""]; this addEventHandler [""respawn"", ""_unit = _this select 0; Grp_C3 = group _unit; Grp_C3 setGroupId ['Charlie 3'];""];";
+					description="Charlie 3 Rifleman (AT)";
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=65;
+		class Item0
+		{
+			position[]={15082.376,17.91,17235.537};
+			azimut=490.92401;
+			id=81;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			leader=1;
+			skill=0.60000002;
+			text="spawnV2";
+			description="Alfa 2 Fireteam Leader";
+		};
+		class Item1
+		{
+			position[]={15103.545,17.907143,17258.57};
+			azimut=133.06799;
+			id=82;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			leader=1;
+			skill=0.60000002;
+			text="spawnV1";
+			description="Alfa 2 Fireteam Leader";
+		};
+		class Item2
+		{
+			position[]={15428.233,0.095296897,15772.915};
+			azimut=-187.36914;
+			id=83;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item3
+		{
+			position[]={15430.148,0.10286833,15759.207};
+			azimut=-186.63321;
+			id=84;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item4
+		{
+			position[]={15425.483,-0.20527275,15789.254};
+			azimut=-188.51239;
+			id=85;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item5
+		{
+			position[]={15131.831,17.91,17247.988};
+			azimut=-45.534;
+			id=86;
+			side="EMPTY";
+			vehicle="Land_Noticeboard_F";
+			leader=1;
+			skill=0.60000002;
+			text="Sign_Veh_1";
+			init="_null = this addaction [""Spawn Hunter"", ""Tier1\ObjectSpawn\spawnHunter.sqf"", """", 7, false, true];  _null = this addaction [""Spawn Hunter HMG"", ""Tier1\ObjectSpawn\spawnHunterHMG.sqf"", """", 7, false, true];  _null = this addaction [""Spawn Hunter GL"", ""Tier1\ObjectSpawn\spawnHunterGL.sqf"", """", 7, false, true];  _null = this addaction [""Spawn Marshal APC"", ""Tier1\ObjectSpawn\spawnMarshal.sqf"", """", 7, false, true, """", ""(paramsarray select 1) == 1""];  _null = this addaction [""Spawn Quadbike"", ""Tier1\ObjectSpawn\spawnQuadbikeBlu.sqf"", """", 7, false, true];  _null = this addaction [""Spawn HEMTT Truck"", ""Tier1\ObjectSpawn\spawnHEMTT.sqf"", """", 7, false, true];  _null = this addaction [""Spawn Offroad"", ""Tier1\ObjectSpawn\spawnCivOffroad.sqf"", """", 7, false, true]; _null = this addaction [""Spawn MBT - Slammer"", ""Tier1\ObjectSpawn\spawnMBT.sqf"", """", 7, false, true]; _null = this addaction [""Spawn APC - Guardian"", ""Tier1\ObjectSpawn\spawnAPC.sqf"", """", 7, false, true]; this allowDamage false; this setObjectTexture [0, ""CombatPatrolGenerator\sm\Tank.jpg""];";
+		};
+		class Item6
+		{
+			position[]={15059.062,17.91,17088.418};
+			azimut=-89.012299;
+			id=87;
+			side="EMPTY";
+			vehicle="Land_Noticeboard_F";
+			leader=1;
+			skill=0.60000002;
+			text="Sign_Heli_1";
+			init="_null = this addaction [""Spawn UH-80 Transport"", ""Tier1\ObjectSpawn\spawnUH80.sqf"", """", 7, false, true]; _null = this addaction [""Spawn CH-49 Transport"", ""Tier1\ObjectSpawn\spawnCH49.sqf"", """", 7, false, true]; _null = this addaction [""Spawn AH-99 Armed"", ""Tier1\ObjectSpawn\spawnAH99.sqf"", """", 7, false, true];  this allowdamage false; this setObjectTexture [0, ""CombatPatrolGenerator\sm\Heli.jpg""];";
+		};
+		class Item7
+		{
+			position[]={15054.932,17.91,17076.434};
+			azimut=445.8627;
+			id=88;
+			side="EMPTY";
+			vehicle="Land_HelipadSquare_F";
+			leader=1;
+			skill=0.60000002;
+			text="spawnA2";
+			description="Alfa 2 Fireteam Leader";
+		};
+		class Item8
+		{
+			position[]={15073.345,17.91,17013.053};
+			azimut=-107.401;
+			id=89;
+			side="EMPTY";
+			vehicle="Land_Noticeboard_F";
+			leader=1;
+			skill=0.60000002;
+			text="Sign_Heli_2";
+			init="_null = this addaction [""Spawn MH-9 Transport"", ""Tier1\ObjectSpawn\spawnMH9.sqf"", """", 7, false, true];  _null = this addaction [""Spawn AH-9 Armed"", ""Tier1\ObjectSpawn\spawnAH9.sqf"", """", 7, false, true]; this allowdamage false; this setObjectTexture [0, ""CombatPatrolGenerator\sm\Heli.jpg""];";
+		};
+		class Item9
+		{
+			position[]={15071.922,17.91,17002.35};
+			azimut=429.92972;
+			id=90;
+			side="EMPTY";
+			vehicle="Land_HelipadSquare_F";
+			leader=1;
+			skill=0.60000002;
+			text="spawnA1";
+			description="Alfa 2 Fireteam Leader";
+		};
+		class Item10
+		{
+			position[]={15110.438,17.91,17225.701};
+			azimut=-44.750801;
+			id=91;
+			side="EMPTY";
+			vehicle="Land_Noticeboard_F";
+			leader=1;
+			skill=0.60000002;
+			text="Sign_Veh_2";
+			init="_null = this addaction [""Spawn Hunter"", ""Tier1\ObjectSpawn\spawnHunter_2.sqf"", """", 7, false, true];  _null = this addaction [""Spawn Hunter HMG"", ""Tier1\ObjectSpawn\spawnHunterHMG_2.sqf"", """", 7, false, true];  _null = this addaction [""Spawn Hunter GL"", ""Tier1\ObjectSpawn\spawnHunterGL_2.sqf"", """", 7, false, true];  _null = this addaction [""Spawn Marshal APC"", ""Tier1\ObjectSpawn\spawnMarshal_2.sqf"", """", 7, false, true, """", ""(paramsarray select 1) == 1""];  _null = this addaction [""Spawn Quadbike"", ""Tier1\ObjectSpawn\spawnQuadbikeBlu_2.sqf"", """", 7, false, true];  _null = this addaction [""Spawn HEMTT Truck"", ""Tier1\ObjectSpawn\spawnHEMTT_2.sqf"", """", 7, false, true];  _null = this addaction [""Spawn Offroad"", ""Tier1\ObjectSpawn\spawnCivOffroad_2.sqf"", """", 7, false, true]; _null = this addaction [""Spawn MBT - Slammer"", ""Tier1\ObjectSpawn\spawnMBT_2.sqf"", """", 7, false, true]; _null = this addaction [""Spawn APC - Guardian"", ""Tier1\ObjectSpawn\spawnAPC_2.sqf"", """", 7, false, true]; this allowDamage false; this setObjectTexture [0, ""CombatPatrolGenerator\sm\Tank.jpg""];";
+			description="test";
+		};
+		class Item11
+		{
+			position[]={15107.45,17.91,17192.711};
+			azimut=226.82379;
+			id=92;
+			side="EMPTY";
+			vehicle="Land_Crash_barrier_F";
+			leader=1;
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item12
+		{
+			position[]={15237.587,17.948107,17279.289};
+			azimut=313.54279;
+			id=93;
+			side="EMPTY";
+			vehicle="Land_Crash_barrier_F";
+			leader=1;
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item13
+		{
+			position[]={15231.342,17.940443,17272.83};
+			azimut=313.54279;
+			id=94;
+			side="EMPTY";
+			vehicle="Land_Crash_barrier_F";
+			leader=1;
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item14
+		{
+			position[]={15101.377,17.91,17199.107};
+			azimut=226.82379;
+			id=95;
+			side="EMPTY";
+			vehicle="Land_Crash_barrier_F";
+			leader=1;
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item15
+		{
+			position[]={15424.043,-0.033049896,15803.313};
+			azimut=-186.06902;
+			id=96;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item16
+		{
+			position[]={15422.518,0.041233283,15817.782};
+			azimut=-187.73267;
+			id=97;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item17
+		{
+			position[]={15183.861,17.899807,17314.006};
+			azimut=167.23549;
+			special="NONE";
+			id=98;
+			side="EMPTY";
+			vehicle="Land_MapBoard_F";
+			skill=0.60000002;
+			init="_nil = [this] execVM ""instructions\initInstructions.sqf""; this allowdamage false; this setObjectTexture [0, ""instructions\pix\strategic_metals.jpg""]; this setVectorUp [0,0,1];";
+		};
+		class Item18
+		{
+			position[]={15187.09,17.903776,17314.258};
+			azimut=207.23543;
+			id=99;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="flag1";
+			init="this allowDamage false; this setFlagTexture ""CombatPatrolGenerator\sm\Tier1.jpg"";";
+		};
+		class Item19
+		{
+			position[]={15178.364,17.885628,17312.604};
+			azimut=207.23543;
+			id=100;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="flag2";
+			init="this allowDamage false; this setFlagTexture ""CombatPatrolGenerator\sm\Tier1.jpg"";";
+		};
+		class Item20
+		{
+			position[]={15568.346,19.249567,17782.678};
+			azimut=-3.450789;
+			offsetY=1.9;
+			id=101;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			skill=0.60000002;
+			text="tex11";
+			init="this setObjectTexture [0, ""CombatPatrolGenerator\sm\Tier1.jpg""]; this attachTo [sign1,[-0.5,-0.05,0.6]]; ";
+		};
+		class Item21
+		{
+			position[]={15570.031,18.234694,17758.088};
+			azimut=-3.450789;
+			offsetY=1.9;
+			id=102;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			skill=0.60000002;
+			text="tex12";
+			init="this setObjectTexture [0, ""instructions\pix\team1.jpg""]; this attachTo [sign1,[+0.5,-0.05,0.6]]; ";
+		};
+		class Item22
+		{
+			position[]={15600.475,20.152218,17784.271};
+			azimut=-3.450789;
+			offsetY=1.9;
+			id=103;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			skill=0.60000002;
+			text="tex21";
+			init="this setObjectTexture [0, ""CombatPatrolGenerator\sm\Tier1.jpg""]; this attachTo [sign2,[-0.5,-0.05,0.6]]; ";
+		};
+		class Item23
+		{
+			position[]={15601.816,18.856091,17759.979};
+			azimut=-3.450789;
+			offsetY=1.9;
+			id=104;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			skill=0.60000002;
+			text="tex22";
+			init="this setObjectTexture [0, ""instructions\pix\team1.jpg""]; this attachTo [sign2,[+0.5,-0.05,0.6]]; ";
+		};
+		class Item24
+		{
+			position[]={14972.774,14.290193,17472.17};
+			azimut=270.04678;
+			id=105;
+			side="EMPTY";
+			vehicle="Land_HelipadSquare_F";
+			leader=1;
+			skill=0.60000002;
+			text="spawnA3";
+		};
+		class Item25
+		{
+			position[]={14973.532,14.125655,17460.271};
+			azimut=-147.53018;
+			id=106;
+			side="EMPTY";
+			vehicle="Land_Crash_barrier_F";
+			leader=1;
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item26
+		{
+			position[]={14998.579,14.634397,17444.404};
+			azimut=-147.53018;
+			id=107;
+			side="EMPTY";
+			vehicle="Land_Crash_barrier_F";
+			leader=1;
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item27
+		{
+			position[]={14990.14,14.240861,17449.713};
+			azimut=-147.53018;
+			id=108;
+			side="EMPTY";
+			vehicle="Land_Crash_barrier_F";
+			leader=1;
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item28
+		{
+			position[]={14981.614,14.069565,17454.826};
+			azimut=-147.53018;
+			id=109;
+			side="EMPTY";
+			vehicle="Land_Crash_barrier_F";
+			leader=1;
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item29
+		{
+			position[]={15160.434,17.858067,17366.555};
+			azimut=-107.53018;
+			id=110;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="flag_un_2";
+			init="this allowDamage false; this setFlagTexture ""A3\data_f\flags\flag_uno_co.paa"";";
+		};
+		class Item30
+		{
+			position[]={15149.245,17.773291,17356.662};
+			azimut=41.672935;
+			id=111;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="flag_un_1";
+			init="this allowDamage false; this setFlagTexture ""A3\data_f\flags\flag_uno_co.paa"";";
+		};
+		class Item31
+		{
+			position[]={15206.588,17.945452,17288.967};
+			azimut=84.381592;
+			id=112;
+			side="EMPTY";
+			vehicle="FlagPole_F";
+			leader=1;
+			skill=0.60000002;
+			text="flag3";
+			init="this allowDamage false; this setFlagTexture ""CombatPatrolGenerator\sm\Tier1.jpg"";";
+		};
+		class Item32
+		{
+			position[]={14983.899,14.251996,17479.143};
+			azimut=-229.46404;
+			id=113;
+			side="EMPTY";
+			vehicle="Land_Pallets_F";
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item33
+		{
+			position[]={14982.536,14.028449,17466.514};
+			azimut=-40.543785;
+			id=114;
+			side="EMPTY";
+			vehicle="Land_Pallets_F";
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item34
+		{
+			position[]={14985.218,14.04747,17472.154};
+			azimut=204.45622;
+			id=115;
+			side="EMPTY";
+			vehicle="Land_Pallets_F";
+			skill=0.60000002;
+			init="this allowDamage false;";
+		};
+		class Item35
+		{
+			position[]={14982.626,14.483398,17484.92};
+			azimut=131.67296;
+			id=116;
+			side="EMPTY";
+			vehicle="Sign_F";
+			leader=1;
+			skill=0.60000002;
+			text="sign3";
+			init="this allowdamage false; this enablesimulation false; _nil = [this] execVM ""instructions\initInstructions4.sqf"";";
+		};
+		class Item36
+		{
+			position[]={15585.906,18.10923,17655.65};
+			azimut=-3.450789;
+			offsetY=1.9;
+			id=117;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			skill=0.60000002;
+			text="tex31";
+			init="this setObjectTexture [0, ""CombatPatrolGenerator\sm\Tier1.jpg""]; this attachTo [sign3,[-0.5,-0.05,0.6]]; ";
+		};
+		class Item37
+		{
+			position[]={15566.514,16.611757,17626.061};
+			azimut=-3.450789;
+			offsetY=1.9;
+			id=118;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			skill=0.60000002;
+			text="tex32";
+			init="this setObjectTexture [0, ""instructions\pix\team1.jpg""]; this attachTo [sign3,[+0.5,-0.05,0.6]]; ";
+		};
+		class Item38
+		{
+			position[]={15183.809,17.899828,17313.938};
+			azimut=152.2355;
+			id=119;
+			side="EMPTY";
+			vehicle="Sign_Arrow_Large_F";
+			skill=0.60000002;
+			init="this setpos [(getpos this) select 0, (getpos this) select 1, 2.5];";
+		};
+		class Item39
+		{
+			position[]={15181.197,17.896843,17313.566};
+			azimut=167.23549;
+			special="NONE";
+			id=120;
+			side="EMPTY";
+			vehicle="MapBoard_altis_F";
+			leader=1;
+			skill=0.60000002;
+			init="_nil = [this] execVM ""instructions\campaignStatusBoard.sqf""; this allowdamage false; this setVectorUp [0,0,1];";
+		};
+		class Item40
+		{
+			position[]={14975.19,14.596384,17483.564};
+			azimut=-87.166061;
+			id=121;
+			side="EMPTY";
+			vehicle="Land_RedWhitePole_F";
+			leader=1;
+			skill=0.60000002;
+			init="this allowDamage false;  _null = this addaction [""<t color='#00ff88'>Initiate Humanitarian Mission</t>"", ""civ\aid\startAidMission.sqf"", """", 7, false, true, """", ""(paramsarray select 16) == 1""];";
+		};
+		class Item41
+		{
+			position[]={15586.037,17.985914,17735.326};
+			azimut=11.5492;
+			offsetY=1.9;
+			id=122;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			skill=0.60000002;
+			text="tex_aan";
+			init="this setObjectTexture [0, ""aan_news\aan_logo.jpg""]; this attachTo [aan_table,[0,0,0.9]]; this setdir 0;";
+		};
+		class Item42
+		{
+			position[]={15457.449,0.0092045348,15816.377};
+			azimut=-276.92868;
+			id=123;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item43
+		{
+			position[]={15458.509,-0.11422959,15811.395};
+			azimut=-276.92868;
+			id=124;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item44
+		{
+			position[]={15459.119,-0.12061606,15804.53};
+			azimut=-276.92868;
+			id=125;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item45
+		{
+			position[]={15459.936,0.11450313,15798.179};
+			azimut=-276.92868;
+			id=126;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item46
+		{
+			position[]={15460.428,-0.06040898,15791.457};
+			azimut=-276.92868;
+			id=127;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item47
+		{
+			position[]={15165.219,17.91,17213.367};
+			azimut=-45.497898;
+			id=128;
+			side="EMPTY";
+			vehicle="Land_HelipadSquare_F";
+			skill=0.60000002;
+		};
+		class Item48
+		{
+			position[]={15149.229,17.91,17196.621};
+			azimut=-45.497898;
+			id=129;
+			side="EMPTY";
+			vehicle="Land_HelipadSquare_F";
+			skill=0.60000002;
+		};
+		class Item49
+		{
+			position[]={15531.737,-0.32599434,15772.898};
+			azimut=-187.24031;
+			id=130;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item50
+		{
+			position[]={15533.604,0.017358497,15759.194};
+			azimut=-186.50438;
+			id=131;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item51
+		{
+			position[]={15524.64,0.13374358,15749.87};
+			azimut=-278.63318;
+			id=132;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item52
+		{
+			position[]={15510.588,-0.10703408,15748.412};
+			azimut=-276.18985;
+			id=133;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item53
+		{
+			position[]={15496.133,0.13052461,15746.845};
+			azimut=-277.85345;
+			id=134;
+			side="EMPTY";
+			vehicle="B_Boat_Armed_01_minigun_F";
+			skill=0.60000002;
+		};
+		class Item54
+		{
+			position[]={15497.442,-0.11354304,15781.779};
+			azimut=-367.04944;
+			id=135;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item55
+		{
+			position[]={15502.436,0.25779146,15782.852};
+			azimut=-367.04944;
+			id=136;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item56
+		{
+			position[]={15509.298,-0.063610733,15783.479};
+			azimut=-367.04944;
+			id=137;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item57
+		{
+			position[]={15515.646,-0.067335173,15784.31};
+			azimut=-367.04944;
+			id=138;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item58
+		{
+			position[]={15522.373,-0.14507031,15784.818};
+			azimut=-367.04944;
+			id=139;
+			side="EMPTY";
+			vehicle="O_Boat_Transport_01_F";
+			skill=0.60000002;
+		};
+		class Item59
+		{
+			position[]={15087.333,17.91,17154.623};
+			azimut=-423.39401;
+			id=140;
+			side="EMPTY";
+			vehicle="Land_Noticeboard_F";
+			leader=1;
+			skill=0.60000002;
+			text="Sign_Jet_1";
+			init="_null = this addaction [""Spawn Buzzard Jet"", ""Tier1\ObjectSpawn\spawnBuzzard.sqf"", """", 7, false, true]; this setVectorUp [0,0,1]; this allowdamage false; this setObjectTexture [0, ""CombatPatrolGenerator\sm\Jet.jpg""]; ";
+		};
+		class Item60
+		{
+			position[]={15080.876,17.91,17146.84};
+			azimut=114.655;
+			id=141;
+			side="EMPTY";
+			vehicle="Land_HelipadEmpty_F";
+			leader=1;
+			skill=0.60000002;
+			text="spawnJet1";
+		};
+		class Item61
+		{
+			position[]={15579.037,16.673979,17630.979};
+			special="NONE";
+			id=142;
+			side="EMPTY";
+			vehicle="Sign_F";
+			leader=1;
+			skill=0.60000002;
+			text="sign1";
+			init="this allowdamage false; this enablesimulation false; _nil = [this] execVM ""instructions\initInstructions2.sqf""; this setVectorUp [0,0,1]; this setVectorDir [1,1,0];";
+		};
+		class Item62
+		{
+			position[]={23151.988,3.1900001,18933.883};
+			id=143;
+			side="EMPTY";
+			vehicle="B_UGV_01_rcws_F";
+			isUAV=1;
+			skill=0.60000002;
+		};
+		class Item63
+		{
+			position[]={23152.844,3.1900001,18892.758};
+			id=144;
+			side="EMPTY";
+			vehicle="B_UGV_01_rcws_F";
+			isUAV=1;
+			skill=0.60000002;
+		};
+		class Item64
+		{
+			position[]={23146.842,3.1900001,18854.203};
+			id=145;
+			side="EMPTY";
+			vehicle="B_UGV_01_rcws_F";
+			isUAV=1;
+			skill=0.60000002;
+		};
+	};
+	class Markers
+	{
+		items=98;
+		class Item0
+		{
+			position[]={15182.812,17.907578,17307.129};
+			name="respawn_west";
+			type="Empty";
+			angle=168.85687;
+		};
+		class Item1
+		{
+			position[]={15041.226,-0.0010804236,14757.211};
+			name="cpg_m_center";
+			text="Center";
+			type="Empty";
+			angle=-42.100323;
+		};
+		class Item2
+		{
+			position[]={14508.941,40.077415,23448.428};
+			name="cpg_m_fort1";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item3
+		{
+			position[]={9008.0986,238.46904,19432.689};
+			name="cpg_m_fort2";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item4
+		{
+			position[]={12773.931,47.786415,19710.545};
+			name="cpg_m_fort3";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item5
+		{
+			position[]={8787.3408,49.757305,14691.31};
+			name="cpg_m_fort4";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item6
+		{
+			position[]={17119.139,26.171146,9990.1689};
+			name="cpg_m_fort5";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item7
+		{
+			position[]={21397.801,20.486528,11142.917};
+			name="cpg_m_fort6";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item8
+		{
+			position[]={22698.76,14.589346,6937.7808};
+			name="cpg_m_fort7";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item9
+		{
+			position[]={10651.414,17.316109,12151.386};
+			name="cpg_m_fort8";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item10
+		{
+			position[]={15591.876,27.055067,11018.012};
+			name="cpg_m_fort9";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item11
+		{
+			position[]={14631.136,49.508396,20825.68};
+			name="cpg_m_fort10";
+			type="Empty";
+			angle=-15.712904;
+		};
+		class Item12
+		{
+			position[]={9058.2344,16.828526,21483.102};
+			name="cpg_m_fort11";
+			type="Empty";
+			angle=-15.712904;
+		};
+		class Item13
+		{
+			position[]={9749.1035,76.63382,7886.5732};
+			name="cpg_m_fort12";
+			type="Empty";
+			angle=-42.100323;
+		};
+		class Item14
+		{
+			position[]={20855.861,32.303463,13250.117};
+			name="cpg_m_fort13";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item15
+		{
+			position[]={22776.086,18.420582,13562.118};
+			name="cpg_m_fort14";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item16
+		{
+			position[]={17431.221,13.807151,13174.582};
+			name="cpg_m_fort15";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item17
+		{
+			position[]={12455.084,149.89479,7509.7861};
+			name="cpg_m_fort16";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item18
+		{
+			position[]={6465.0542,159.30704,18595.449};
+			name="cpg_m_fort17";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item19
+		{
+			position[]={21174.781,25.324566,16534.078};
+			name="cpg_m_fort18";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item20
+		{
+			position[]={5841.4814,149.01437,13499.084};
+			name="cpg_m_fort19";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item21
+		{
+			position[]={19822.463,86.973541,18015.67};
+			name="cpg_m_fort20";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item22
+		{
+			position[]={25985.279,65.165108,22130.133};
+			name="cpg_m_fort21";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item23
+		{
+			position[]={9524.1289,13.706011,11895.877};
+			name="cpg_m_fort22";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item24
+		{
+			position[]={18605.242,42.413872,16807.578};
+			name="cpg_m_fort23";
+			type="Empty";
+			angle=28.899029;
+		};
+		class Item25
+		{
+			position[]={20979.766,16.733007,19262.006};
+			name="cpg_m_fort24";
+			type="Empty";
+			angle=28.899029;
+		};
+		class Item26
+		{
+			position[]={14011.705,25.743729,18748.584};
+			name="cpg_m_fort25";
+			type="Empty";
+			angle=28.899029;
+		};
+		class Item27
+		{
+			position[]={21793.902,14.320447,7562.1875};
+			name="cpg_m_fort26";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item28
+		{
+			position[]={19141.801,43.149231,8777.6035};
+			name="cpg_m_fort27";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item29
+		{
+			position[]={16404.279,23.937872,17218.674};
+			name="cpg_m_fort28";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item30
+		{
+			position[]={20575.857,35.625,8903.7598};
+			name="cpg_m_fort29";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item31
+		{
+			position[]={11552.763,47.63731,15982.681};
+			name="cpg_m_dposl";
+			type="Empty";
+			angle=-46.038685;
+		};
+		class Item32
+		{
+			position[]={20006.711,59.124619,11664.343};
+			name="cpg_m_dposw";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item33
+		{
+			position[]={15157.338,17.91,17204.992};
+			name="m_service";
+			text=" Helicopter Service";
+			type="b_maint";
+			angle=180.13397;
+		};
+		class Item34
+		{
+			position[]={15113.408,17.91,17262.438};
+			name="cpg_m_startloc";
+			type="Empty";
+			angle=-9.8387232;
+		};
+		class Item35
+		{
+			position[]={15198.562,17.926977,17357.045};
+			name="m_base";
+			text="Base";
+			type="mil_flag";
+			colorName="ColorBLUFOR";
+			angle=-9.8387232;
+		};
+		class Item36
+		{
+			position[]={15153.64,18.35836,17045.521};
+			name="m_clrvehwrks";
+			type="Empty";
+			angle=-3.450789;
+		};
+		class Item37
+		{
+			position[]={18847.021,189.3316,10093.274};
+			name="cpg_m_fort30";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item38
+		{
+			position[]={6645.0127,110.01245,22624.688};
+			name="cpg_m_fort31";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item39
+		{
+			position[]={27394.895,21.052322,24752.348};
+			name="cpg_m_fort32";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item40
+		{
+			position[]={21369.066,21.472248,16394.289};
+			name="cpg_m_fort33";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item41
+		{
+			position[]={15410.735,15.301714,17561.809};
+			name="UAV";
+			text=" UAV Recon Target";
+			type="Empty";
+			angle=-17.72242;
+		};
+		class Item42
+		{
+			position[]={11108.113,136.54747,8866.4736};
+			name="currentAO";
+			type="Empty";
+			angle=-42.100323;
+		};
+		class Item43
+		{
+			position[]={12852.981,86.162903,16716.512};
+			name="cpg_m_fort34";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item44
+		{
+			position[]={20729.701,43.857967,6649.4985};
+			name="cpg_m_fort35";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item45
+		{
+			position[]={16820.777,20.274593,12830.985};
+			name="cpg_m_fort36";
+			type="Empty";
+			angle=-42.100323;
+		};
+		class Item46
+		{
+			position[]={23135.686,3.1900001,18698.889};
+			name="cpg_m_fort37";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item47
+		{
+			position[]={21693.117,13.657647,14061.802};
+			name="cpg_m_fort38";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item48
+		{
+			position[]={17997.91,-0.2408586,24522.313};
+			name="info";
+			text="Teamplay only server";
+			type="mil_dot";
+			colorName="ColorBlue";
+		};
+		class Item49
+		{
+			position[]={17997.16,0.21607926,24322.805};
+			name="info_1";
+			text="No teamkill is tolerated";
+			type="mil_dot";
+			colorName="ColorBlue";
+		};
+		class Item50
+		{
+			position[]={17997.363,-0.13931847,24222.543};
+			name="info_2";
+			text="You must be on teamspeak to fly";
+			type="mil_dot";
+			colorName="ColorRed";
+		};
+		class Item51
+		{
+			position[]={17996.936,-0.28254294,24122.441};
+			name="info_3";
+			text="Teamspeak: ts.tier1ops.eu - pw: welcome";
+			type="mil_dot";
+			colorName="ColorRed";
+		};
+		class Item52
+		{
+			position[]={17997.145,-0.022755155,24022.809};
+			name="info_4";
+			text="Tier1 is recruiting mature teamplayers";
+			type="mil_dot";
+			colorName="ColorGreen";
+		};
+		class Item53
+		{
+			position[]={17996.787,0.17072392,23923.008};
+			name="info_5";
+			text="Website: www.tier1ops.eu";
+			type="mil_dot";
+			colorName="ColorGreen";
+		};
+		class Item54
+		{
+			position[]={17997.191,0.0023069531,23822.742};
+			name="info_6";
+			text="Only requirement: be a teamplayer";
+			type="mil_dot";
+			colorName="ColorGreen";
+		};
+		class Item55
+		{
+			position[]={17997.191,0.050299842,24418.785};
+			name="info_7";
+			text="Listen to orders";
+			type="mil_dot";
+			colorName="ColorBlue";
+		};
+		class Item56
+		{
+			position[]={17997.395,-0.13456531,23720.871};
+			name="info_8";
+			text="No 3rd Person View";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item57
+		{
+			position[]={17996.914,0.14353707,23620.531};
+			name="info_9";
+			text="No Ammo Boxes / No Custom Gear";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item58
+		{
+			position[]={18179.35,26.31419,15255.784};
+			name="cpg_m_fort39";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item59
+		{
+			position[]={17998.033,0.22897723,23518.367};
+			name="info_10";
+			text="Press G to throw Grenades";
+			type="mil_dot";
+			colorName="ColorRed";
+		};
+		class Item60
+		{
+			position[]={17998.063,-0.053713046,23417.75};
+			name="info_11";
+			text="Press I to open Inventory";
+			type="mil_dot";
+			colorName="ColorRed";
+		};
+		class Item61
+		{
+			position[]={17996.438,-0.18878077,23320.102};
+			name="info_12";
+			text="Team name is in upper right corner";
+			type="mil_dot";
+			colorName="ColorBlue";
+		};
+		class Item62
+		{
+			position[]={17995.578,0.14699759,23216.48};
+			name="info_13";
+			text="Question civilians to obtain more enemy markers";
+			type="mil_dot";
+			colorName="ColorBlue";
+		};
+		class Item63
+		{
+			position[]={17995.926,0.057992041,23117.266};
+			name="info_14";
+			text="Watch out for IEDs on the roads!";
+			type="mil_dot";
+			colorName="ColorRed";
+		};
+		class Item64
+		{
+			position[]={14102.634,11.43467,12956.771};
+			name="cpg_m_fort40";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item65
+		{
+			position[]={20834.846,45.941044,16870.416};
+			name="cpg_m_fort41";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item66
+		{
+			position[]={20086.66,100.94214,6727.1733};
+			name="radio_1";
+			type="loc_Transmitter";
+			a=0.80000001;
+			b=0.80000001;
+			angle=5.4607158;
+		};
+		class Item67
+		{
+			position[]={20200.479,115.0676,12865.097};
+			name="radio_2";
+			type="loc_Transmitter";
+			a=0.80000001;
+			b=0.80000001;
+			angle=5.4607158;
+		};
+		class Item68
+		{
+			position[]={19361.461,196.33432,9697.4033};
+			name="radio_3";
+			type="loc_Transmitter";
+			a=0.80000001;
+			b=0.80000001;
+			angle=5.4607158;
+		};
+		class Item69
+		{
+			position[]={20074.471,101.15453,6716.6094};
+			name="cpg_m_fort42";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item70
+		{
+			position[]={18874.354,67.726044,15606.938};
+			name="radio_4";
+			type="loc_Transmitter";
+			a=0.80000001;
+			b=0.80000001;
+			angle=5.4607158;
+		};
+		class Item71
+		{
+			position[]={15121.418,17.91,17230.836};
+			name="info_15";
+			text="Vehicle spawn";
+			type="b_motor_inf";
+			colorName="ColorBLUFOR";
+			angle=0.46594554;
+		};
+		class Item72
+		{
+			position[]={19333.783,34.100231,13305.976};
+			name="cpg_m_fort43";
+			type="Empty";
+			angle=-15.712904;
+		};
+		class Item73
+		{
+			position[]={14972.286,14.324539,17473.494};
+			name="un_spawn";
+			type="Empty";
+			angle=-13.3271;
+		};
+		class Item74
+		{
+			position[]={16705.943,17.864136,12900.491};
+			name="cpg_m_fort45";
+			type="Empty";
+			angle=-42.100323;
+		};
+		class Item75
+		{
+			position[]={21034.721,36.913002,17015.793};
+			name="cpg_m_fort44";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item76
+		{
+			position[]={17996.02,-0.1605,23015.941};
+			name="info_16";
+			text="Don't pickup enemy weapons";
+			type="mil_dot";
+			colorName="ColorRed";
+		};
+		class Item77
+		{
+			position[]={18002.332,-0.11999703,21368.645};
+			name="recon_example";
+			text=" Recon";
+			type="o_recon";
+		};
+		class Item78
+		{
+			position[]={18001.166,-0.054752816,21169.887};
+			name="inf_example";
+			text=" Infantry";
+			type="o_inf";
+		};
+		class Item79
+		{
+			position[]={18003.684,-0.13685545,20967.902};
+			name="mot_inf_example";
+			text=" Motorized Inf";
+			type="o_motor_inf";
+		};
+		class Item80
+		{
+			position[]={18001.512,-0.2159929,20759.186};
+			name="mech_inf_example";
+			text=" Mechanized Inf";
+			type="o_mech_inf";
+		};
+		class Item81
+		{
+			position[]={19002.295,-0.1107592,21782.633};
+			name="armored_example";
+			text=" Armored";
+			type="o_armor";
+		};
+		class Item82
+		{
+			position[]={19005.379,-0.25210971,21567.289};
+			name="heli_example";
+			text=" Helicopter";
+			type="o_air";
+		};
+		class Item83
+		{
+			position[]={19003.492,-0.26568583,21371.777};
+			name="mortar_example";
+			text=" Mortar";
+			type="o_mortar";
+		};
+		class Item84
+		{
+			position[]={18999.328,-0.0072897449,21166.215};
+			name="arty_example";
+			text=" Artillery";
+			type="o_art";
+		};
+		class Item85
+		{
+			position[]={19007.084,-0.063835748,20963.855};
+			name="support_example";
+			text=" Support";
+			type="o_support";
+		};
+		class Item86
+		{
+			position[]={18003.537,0.019349147,21569.947};
+			name="hq_example";
+			text=" HQ";
+			type="o_hq";
+		};
+		class Item87
+		{
+			position[]={18001.365,-0.008181937,21769.457};
+			name="unknown_example";
+			text=" Unknown";
+			type="o_unknown";
+		};
+		class Item88
+		{
+			position[]={19005.826,-0.26244092,20766.533};
+			name="installation_example";
+			text=" Installation";
+			type="o_installation";
+		};
+		class Item89
+		{
+			position[]={21289.436,14.519386,10856.99};
+			name="cpg_center_dec_win_1";
+			text="Dec Win 1";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item90
+		{
+			position[]={22519.182,19.700638,19780.328};
+			name="cpg_center_dec_win_2";
+			text="Dec Win 2";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item91
+		{
+			position[]={19400.975,38.439144,13267.763};
+			name="cpg_center_mod_win_1";
+			text="Mod Win 1";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item92
+		{
+			position[]={5893.1431,41.219795,16449.502};
+			name="cpg_center_mod_win_2";
+			text="Mod Win 2";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item93
+		{
+			position[]={15562.146,34.891464,19539.262};
+			name="cpg_center_mod_lose";
+			text="Mod Lose";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item94
+		{
+			position[]={16066.045,31.847395,16373.756};
+			name="cpg_center_dec_lose";
+			text="Dec Lose";
+			type="Empty";
+			angle=5.4607158;
+		};
+		class Item95
+		{
+			position[]={15057.359,17.91,17036.773};
+			name="HeliSpawn";
+			text=" Helicopter Spawn";
+			type="b_air";
+			angle=360.11786;
+		};
+		class Item96
+		{
+			position[]={15074.593,17.91,17132.486};
+			name="Jetspawn";
+			text="Raptor Spawn";
+			type="b_plane";
+			angle=180.48288;
+		};
+		class Item97
+		{
+			position[]={15488.722,0.025372837,15821.854};
+			name="Boats";
+			text=" Boats";
+			type="b_naval";
+			angle=360.11801;
+		};
+	};
+	class Sensors
+	{
+		items=4;
+		class Item0
+		{
+			position[]={15143.086,17.894892,17270.664};
+			a=70;
+			b=120;
+			angle=44.3335;
+			rectangular=1;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="trg_noFireZone";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={15165.186,17.91,17213.209};
+			a=5;
+			b=5;
+			angle=133.94901;
+			rectangular=1;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="trg_farp1";
+			class Effects
+			{
+			};
+		};
+		class Item2
+		{
+			position[]={15149.392,17.91,17196.564};
+			a=5;
+			b=5;
+			angle=133.94901;
+			rectangular=1;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="trg_farp2";
+			class Effects
+			{
+			};
+		};
+		class Item3
+		{
+			position[]={14714.62,17.909494,16338.106};
+			a=650;
+			b=75;
+			angle=-45.922699;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="trg_JetSupply";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=4802628;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=1003809;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"a3_map_stratis",
+		"a3_map_altis"
+	};
+	addOnsAuto[]=
+	{
+		"a3_map_altis"
+	};
+	randomSeed=15322849;
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2035;
+		month=7;
+		day=6;
+		hour=14;
+		minute=15;
+		startFogDecay=0.0049333;
+		forecastFogDecay=0.0049333;
+	};
+};

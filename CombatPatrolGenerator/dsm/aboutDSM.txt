@@ -1,0 +1,14 @@
+
+0 - SAD Small Radar
+1 - SAD RoadBlock
+2 - SAD Small FOB
+3 - SAD Enemy HQ
+4 - SAD Cache
+5 - SAE Officer
+6 - SAD Armed Chopper
+7 - SAE Special Forces
+8 - Investigate War Crimes
+9 - SAE AA Units
+10 - SAD Mortar Site
+11 - SAE AT Units
+
